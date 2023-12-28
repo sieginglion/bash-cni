@@ -30,6 +30,7 @@ apt-mark hold kubelet kubeadm kubectl
 kubeadm init --pod-network-cidr=10.244.0.0/16
 export KUBECONFIG=/etc/kubernetes/admin.conf
 kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 
 # Install K9s
 curl -LO https://github.com/derailed/k9s/releases/download/v0.30.4/k9s_Linux_amd64.tar.gz
